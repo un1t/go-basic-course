@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 type Human struct {
-	name    string
-	weight  float64
-	hobbies []string
+	name   string
+	weight float64
 }
 
 func (h Human) sayName() {
@@ -17,23 +16,24 @@ type Ninja struct {
 	weapon string
 }
 
+func (n Ninja) fight() {
+	fmt.Println("Fighting...")
+}
+
 func main() {
 	h := Human{
-		name:    "Alex",
-		weight:  75,
-		hobbies: []string{"painting"},
+		name:   "Alex",
+		weight: 75,
 	}
 	h.sayName()
 
 	n := Ninja{
-		Human: Human{
-			name:    "Max",
-			weight:  78,
-			hobbies: []string{"fighting", "skateboarding"},
-		},
+		Human:  Human{name: "Max", weight: 78},
 		weapon: "sword",
 	}
+	n.Human.sayName()
 	n.sayName()
 
-	fmt.Printf("%#v", n)
+	fmt.Printf("%#v\n", n)
+	fmt.Println(n.name, n.weight, n.weapon)
 }
