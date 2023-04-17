@@ -3,7 +3,7 @@ package foo_test
 import (
 	"testing"
 
-	"example/foo"
+	"github.com/un1t/example/foo"
 )
 
 func TestAdd(t *testing.T) {

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"example/foo"
+	"github.com/un1t/example/foo"
 )
 
 func main() {
