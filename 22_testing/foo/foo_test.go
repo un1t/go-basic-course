@@ -7,17 +7,18 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	result := foo.Add(2, 3)
-	if result != 5 {
-		t.Logf("Expected 5, got %d", result)
-		t.Fail()
+	var tests = []struct {
+		a, b, result int
+	}{
+		{1, 2, 3},
+		{2, 2, 4},
+		{5, 5, 10},
 	}
 
-	t.Run("case 1", func(t *testing.T) {
-		result = foo.Add(3, 7)
-		if result != 10 {
-			t.Logf("Expected 10, got %d", result)
-			t.Fail()
+	for _, tt := range tests {
+		result := foo.Add(tt.a, tt.b)
+		if result != tt.result {
+			t.Errorf("Expected %v, got %v", tt.result, result)
 		}
-	})
+	}
 }
